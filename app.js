@@ -13,8 +13,6 @@ const errorHandlerMiddleware = require('./middleware/error-handler')
 app.use(express.json());
 app.use(cors());
 app.use(xss());
-app.use(express.static('./public'));
-
 
 app.get('/', (req, res) => {
     res.send(<h1>Courses Api</h1>)
