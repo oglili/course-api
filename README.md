@@ -1,13 +1,13 @@
 # RESTful JSON APIs for a training platform.
 
-In this project I created a RESTful JSON APIs using Express js, which provides a way for insertion of the courses offered by the platform intothe database. Users can interact with the database by retrieving a list of courses, as well as adding, updating and deleting courses in the database.
+In this project I created a RESTful JSON APIs using Express js, which provides a way for insertion of the courses offered by the platform into the database. Users can interact with the database by retrieving a list of courses, as well as adding, updating and deleting courses in the database.
 
 ## Technologies Used
 
 - Node.js
 - Express js
 - MongoDB/Mongoose
-- 
+
 ## Installation
 
 - Download or clone from Github
