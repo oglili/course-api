@@ -48,6 +48,7 @@ In this project I created a RESTful JSON APIs using Express js, which provides a
 ## Links
 Link to App:
 https://courses-catalog-api.herokuapp.com/api/v1/courses
+
 Link to Github:
 https://github.com/oglili/course-api
 
