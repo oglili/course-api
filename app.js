@@ -15,7 +15,7 @@ app.use(cors());
 app.use(xss());
 
 app.get('/', (req, res) => {
-    res.send(<h1>Courses Api</h1>)
+    res.send('Courses Api')
 })
 // route
 app.use('/api/v1/courses', courses)
