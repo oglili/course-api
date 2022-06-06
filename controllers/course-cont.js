@@ -55,65 +55,22 @@ const getCourseParams =  asyncWrapper( async (req,res,next) => {
 
 
 const updateCourse =  asyncWrapper( async (req,res) => {
-    const { type } = req.params
-    const course = await Course.findOneAndUpdate({type}, req.body, {
+    const {id:courseID} = req.params
+    const course = await Course.findOneAndUpdate({_id:courseID}, req.body, {
         new: true,
         runValidators:true,
     });
     if (!course) {
-        return next(createCustomError(`No course with type:${type}`, 404))
+        return next(createCustomError(`No course with id:${courseID}`, 404))
         }
     res.status(200).json({ course })
 })
 
 const deleteCourse = asyncWrapper( async (req,res) => {
-    const { type } = req.params
-    const course = await Course.findOneAndDelete({ type });
+    const {id:courseID} = req.params
+    const course = await Course.findOneAndDelete({ _id:courseID });
     if (!course) {
-        return next(createCustomError(`No course with type:${type}`, 404))
-    }
-    res.status(200).json({ course: null, status: 'success' })
-})
-
-
-const updateCourseTypeName =  asyncWrapper( async (req,res) => {
-    const { type, name } = req.params
-    const course = await Course.findOneAndUpdate({type, name}, req.body, {
-        new: true,
-        runValidators:true,
-    });
-    if (!course) {
-        return next(createCustomError(`No course with type:${type} and/or name:${name}`, 404))
-        }
-    res.status(200).json({ course })
-})
-
-const updateCourseUni =  asyncWrapper( async (req,res) => {
-    const { university } = req.params
-    const course = await Course.findOneAndUpdate({ university }, req.body, {
-        new: true,
-        runValidators:true,
-    });
-    if (!course) {
-        return next(createCustomError(`No course with university:${university}`, 404))
-        }
-    res.status(200).json({ course })
-})
-
-const deleteCourseTypeName = asyncWrapper( async (req,res) => {
-    const { type, name } = req.params
-    const course = await Course.findOneAndDelete({ type, name });
-    if (!course) {
-        return next(createCustomError(`No course with type:${type} and/or name:${name}`, 404))
-    }
-    res.status(200).json({ course: null, status: 'success' })
-})
-
-const deleteCourseUni = asyncWrapper( async (req,res) => {
-    const {university} = req.params
-    const course = await Course.findOneAndDelete({ university });
-    if (!course) {
-        return next(createCustomError(`No course with university:${university}`, 404))
+        return next(createCustomError(`No course with id:${courseID}`, 404))
     }
     res.status(200).json({ course: null, status: 'success' })
 })
@@ -123,11 +80,7 @@ module.exports = {
     createCourse,
     getCourse,
     getAllCourses,
-    updateCourse,
-    deleteCourse,
     getCourseParams,
-    updateCourseTypeName,
-    deleteCourseTypeName,
-    updateCourseUni,
-    deleteCourseUni
+    updateCourse,
+    deleteCourse
 }
