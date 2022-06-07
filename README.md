@@ -24,15 +24,10 @@ In this project I created a RESTful JSON APIs using Express js, which provides a
 - `GET /api/v1/courses` - Returns all courses.
 - `GET /api/v1/courses:id` - Returns the course for the provided course ID
 - `GET /api/v1/courses/all/query` - Returns the courses for the provided query using the parameters in the database
-- `GET /api/v1/courses/:type/:name` - Returns the course for the provided type and name
+- `GET /api/v1/courses/:name/:university` - Returns the courses for the provided name and university
 - `POST /api/v1/courses` - Creates a course
-- `PATCH /api/v1/courses/:type` - Updates a course specifying any type param
-- `PATCH /api/v1/courses/:type/:name` - Updates a course specifying any type and name params
-- `PATCH /api/v1/courses/uni/course/:university` - Updates a course specifying the university params
-- `DELETE /api/v1/courses/:type` - Deletes a course using type params
-- `DELETE /api/v1/courses/:type/:name` - Deletes a course using type & name params
-- `DELETE /api/v1/courses/uni/course/:university` - Deletes a course using university params
-
+- `PATCH /api/v1/courses/:id` - Updates a course specifying the id
+- `DELETE /api/v1/courses/:id` - Deletes a course specifying the id
 ### Tests
 
 - Postman can be used to test the REST API.
