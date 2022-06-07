@@ -28,6 +28,8 @@ In this project I created a RESTful JSON APIs using Express js, which provides a
 - `POST /api/v1/courses` - Creates a course
 - `PATCH /api/v1/courses/:id` - Updates a course specifying the id
 - `DELETE /api/v1/courses/:id` - Deletes a course specifying the id
+
+
 ### Tests
 
 - Postman can be used to test the REST API.
