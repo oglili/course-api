@@ -14,7 +14,7 @@ router.get('/', getCourses)
 router.post('/', createCourse)
 router.get('/:id', getCourse)
 router.get('/all/query', getAllCourses)
-router.get('/:type/:name', getCourseParams)
+router.get('/:name/:university', getCourseParams)
 router.patch('/:id', updateCourse)
 router.delete('/:id', deleteCourse)
 

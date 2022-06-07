@@ -45,10 +45,10 @@ const getAllCourses = asyncWrapper( async (req, res) => {
 })
 
 const getCourseParams =  asyncWrapper( async (req,res,next) => {
-    const {type, name} = req.params
-    const course = await Course.find({type,name});
+    const { name, university} = req.params
+    const course = await Course.find({ name, university });
     if (!course) {
-        return next(createCustomError(`No course with type: ${type} and name: ${name}`, 404))
+        return next(createCustomError(`No course with name: ${name} and university ${university}`, 404))
     }
     res.status(200).json({ course })
 })
