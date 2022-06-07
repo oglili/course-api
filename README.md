@@ -39,6 +39,7 @@ In this project I created a RESTful JSON APIs using Express js, which provides a
 ### Validation
 
 - Course: `name`, `type`, `university` are required and case insensitive
+- Universities valid are: `University of Vicenza`, `University of Verona`, `University of Brescia`, `University of Milano`, `University of Catania`, `University of Rome` and `University of Macerata` 
 
 ## Links
 Link to App:
