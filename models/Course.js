@@ -18,7 +18,6 @@ const CourseSchema = new mongoose.Schema({
             values:['University of Vicenza','University of Verona','University of Brescia','University of Milano','University of Catania','University of Rome','University of Macerata'],
             message:'{VALUE} is not supported'
         },
-        required:[true, 'must provide the university name'],
         trim:true
     }
 

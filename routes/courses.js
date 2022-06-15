@@ -4,18 +4,20 @@ const {
     getCourses,
     createCourse,
     getCourse,
-    getAllCourses,
+    createCourseAll,
     updateCourse,
     deleteCourse,
-    getCourseParams
+    updateCourseAll,
+    deleteCourseAll
 } = require('../controllers/course-cont')
 
 router.get('/', getCourses)
 router.post('/', createCourse)
+router.post('/all', createCourseAll)
 router.get('/:id', getCourse)
-router.get('/all/query', getAllCourses)
-router.get('/:name/:university', getCourseParams)
 router.patch('/:id', updateCourse)
 router.delete('/:id', deleteCourse)
+router.patch('/course/:abc', updateCourseAll)
+router.delete('/course/:abc', deleteCourseAll)
 
 module.exports = router
