@@ -90,7 +90,7 @@ const deleteCourse = asyncWrapper( async (req,res) => {
 })
 
 const updateCourseAll =  asyncWrapper( async (req,res) => {
-    const { name, type, university } = req.params.abc;
+    const { name, type, university } = req.params.all;
 
     const queryObject = {};
     
@@ -117,7 +117,7 @@ const updateCourseAll =  asyncWrapper( async (req,res) => {
 })
 
 const deleteCourseAll = asyncWrapper( async (req,res) => {
-    const { name, type, university } = req.params.abc;
+    const { name, type, university } = req.params.all;
 
     const queryObject = {};
     
