@@ -21,14 +21,22 @@ In this project I created a RESTful JSON APIs using Express js, which provides a
 
 ### Course
 
-- `GET /api/v1/courses` - Returns all courses.
+- `GET /api/v1/courses` - Returns all courses or for the provided query using the parameters in the database. 
+* Example: /api/v1/courses?name=Economics&university=University%20of%20Verona
 - `GET /api/v1/courses:id` - Returns the course for the provided course ID
-- `GET /api/v1/courses/all/query` - Returns the courses for the provided query using the parameters in the database
-- `GET /api/v1/courses/:name/:university` - Returns the courses for the provided name and university
+* Example: /api/v1/courses/6291eb733531b12f74618fa4
 - `POST /api/v1/courses` - Creates a course
+* Example: /api/v1/courses
+- `POST /api/v1/courses/all` - Creates a course using any parameters in the database
+* Example: /api/v1/courses/all?university=University of Macerata
 - `PATCH /api/v1/courses/:id` - Updates a course specifying the id
+* Example: /api/v1/courses/62910b7ee27b561b58fcb5ae
 - `DELETE /api/v1/courses/:id` - Deletes a course specifying the id
-
+* Example: /api/v1/courses/62910b7ee27b561b58fcb5ae
+- `PATCH /api/v1/courses/:all` - Updates a course specifying any parameters
+* Example: /api/v1/courses/course/Matematics
+- `DELETE /api/v1/courses/:all` - Deletes a course specifying any parameters
+* Example: /api/v1/courses/course/University of Vicenza
 
 ### Tests
 
