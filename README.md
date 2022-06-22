@@ -27,16 +27,16 @@ In this project I created a RESTful JSON APIs using Express js, which provides a
    Example: /api/v1/courses/6291eb733531b12f74618fa4
 - `POST /api/v1/courses` - Creates a course
    Example: /api/v1/courses
-- `POST /api/v1/courses/all` - Creates a course using any parameters in the database
-   Example: /api/v1/courses/all?university=University of Macerata
+- `POST /api/v1/courses/name/:name` - Creates a course using name of a course.
+   Example: /api/v1/courses/name/Psychology
+- `POST /api/v1/courses/type/:type` - Creates a course using type of a course.
+   Example: /api/v1/courses/type/Master
+- `POST /api/v1/courses/uni/:university` - Creates a course using university of a course.
+   Example: /api/v1/courses/uni/University of Verona
 - `PATCH /api/v1/courses/:id` - Updates a course specifying the id
    Example: /api/v1/courses/62910b7ee27b561b58fcb5ae
 - `DELETE /api/v1/courses/:id` - Deletes a course specifying the id
    Example: /api/v1/courses/62910b7ee27b561b58fcb5ae
-- `PATCH /api/v1/courses/:all` - Updates a course specifying any parameters
-   Example: /api/v1/courses/course/Matematics
-- `DELETE /api/v1/courses/:all` - Deletes a course specifying any parameters
-   Example: /api/v1/courses/course/University of Vicenza
 
 ### Tests
 
