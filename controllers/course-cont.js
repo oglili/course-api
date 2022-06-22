@@ -33,8 +33,22 @@ const createCourse = asyncWrapper( async (req,res) => {
         res.status(201).json({ course })
 })
 
-const createCourseAll = asyncWrapper( async (req,res) => {
-    const {type, name, university} = req.query;
+const createCourseName = asyncWrapper( async (req,res) => {
+    const {name} = req.params;
+    const queryObject = {};
+    
+    if (name) {
+        queryObject.name = name;
+        queryObject.type = req.body.type;
+        queryObject.university = req.body.university;
+    }
+    
+    let course = await Course.create(queryObject)
+        res.status(201).json({ course })
+})
+
+const createCourseType = asyncWrapper( async (req,res) => {
+    const {type} = req.params;
     const queryObject = {};
     
     if (type) {
@@ -42,13 +56,15 @@ const createCourseAll = asyncWrapper( async (req,res) => {
         queryObject.type = type;
         queryObject.university = req.body.university;
     }
+    
+    let course = await Course.create(queryObject)
+        res.status(201).json({ course })
+})
 
-    if (name) {
-        queryObject.name = name;
-        queryObject.type = req.body.type;
-        queryObject.university = req.body.university;
-    }
-
+const createCourseUni = asyncWrapper( async (req,res) => {
+    const {university} = req.params;
+    const queryObject = {};
+    
     if (university) {
         queryObject.name = req.body.name;
         queryObject.type = req.body.type;
@@ -89,65 +105,15 @@ const deleteCourse = asyncWrapper( async (req,res) => {
     res.status(200).json({ course: null, status: 'success' })
 })
 
-const updateCourseAll =  asyncWrapper( async (req,res) => {
-    const { name, type, university } = req.params.all;
-
-    const queryObject = {};
-    
-    if (type) {
-        queryObject.type = type;
-    }
-
-    if (name) {
-        queryObject.name = name;
-    }
-
-    if (university) {
-        queryObject.university = university;
-    }
-    
-    const course = await Course.findOneAndUpdate( queryObject, req.body, {
-        new: true,
-        runValidators:true,
-    });
-    if (!course) {
-        return next(createCustomError(`No course`, 404))
-        }
-    res.status(200).json({ course })
-})
-
-const deleteCourseAll = asyncWrapper( async (req,res) => {
-    const { name, type, university } = req.params.all;
-
-    const queryObject = {};
-    
-    if (type) {
-        queryObject.type = type;
-    }
-
-    if (name) {
-        queryObject.name = name;
-    }
-
-    if (university) {
-        queryObject.university = university;
-    }
-    
-    const course = await Course.findOneAndDelete(queryObject);
-    if (!course) {
-        return next(createCustomError(`No course`, 404))
-    }
-    res.status(200).json({ course: null, status: 'success' })
-})
-
 
 module.exports = {
     getCourses,
     createCourse,
     getCourse,
-    createCourseAll,
+    createCourseName,
+    createCourseType,
+    createCourseUni,
     updateCourse,
-    deleteCourse,
-    updateCourseAll,
-    deleteCourseAll
+    deleteCourse
+    
 }
