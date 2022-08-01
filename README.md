@@ -1,4 +1,4 @@
-# RESTful JSON APIs for a Reach17 training platform.
+# RESTful JSON APIs for Reach17 training platform.
 
 Reach17 is a UN goal-based training platform that will need to catalog the courses it will offer.
 
@@ -50,9 +50,7 @@ In this project I created a RESTful JSON APIs using Express js, which provides a
 - Error messages are always returned in an array of error objects
 
 
-## Links
-Link to App:
-https://courses-catalog-api.herokuapp.com/api/v1/courses
+## Link
 
 Link to Github:
 https://github.com/oglili/course-api
