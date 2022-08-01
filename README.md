@@ -1,4 +1,6 @@
-# RESTful JSON APIs for a training platform.
+# RESTful JSON APIs for a Reach17 training platform.
+
+Reach17 is a UN goal-based training platform that will need to catalog the courses it will offer.
 
 In this project I created a RESTful JSON APIs using Express js, which provides a way for insertion of the courses offered by the platform into the database. Users can interact with the database by retrieving a list of courses, as well as adding, updating and deleting courses in the database.
 
@@ -21,22 +23,23 @@ In this project I created a RESTful JSON APIs using Express js, which provides a
 
 ### Course
 
-- `GET /api/v1/courses` - Returns all courses or for the provided query using the parameters in the database. 
-   Example: /api/v1/courses?name=Economics&university=University%20of%20Verona
-- `GET /api/v1/courses:id` - Returns the course for the provided course ID
-   Example: /api/v1/courses/6291eb733531b12f74618fa4
-- `POST /api/v1/courses` - Creates a course
-   Example: /api/v1/courses
-- `POST /api/v1/courses/name/:name` - Creates a course using name of a course.
-   Example: /api/v1/courses/name/Psychology
-- `POST /api/v1/courses/type/:type` - Creates a course using type of a course.
-   Example: /api/v1/courses/type/Master
-- `POST /api/v1/courses/uni/:university` - Creates a course using university of a course.
-   Example: /api/v1/courses/uni/University of Verona
-- `PATCH /api/v1/courses/:id` - Updates a course specifying the id
-   Example: /api/v1/courses/62910b7ee27b561b58fcb5ae
-- `DELETE /api/v1/courses/:id` - Deletes a course specifying the id
-   Example: /api/v1/courses/62910b7ee27b561b58fcb5ae
+- `GET /api/v1/courses` - Returns all courses.   
+- `GET /api/v1/courses/type` - Returns all course types.
+- `GET /api/v1/courses/univ` - Returns all course universities.
+- `POST /api/v1/courses` - Creates a course.
+- `POST /api/v1/courses/type` - Creates a course type.
+- `POST /api/v1/courses/univ` - Creates a university.
+- `PUT /api/v1/courses/:id` - Updates a course specifying the id.
+- `PUT /api/v1/courses/type/:id` - Updates a type specifying the id.
+- `PUT /api/v1/courses/univ/:id` - Updates a university specifying the id.
+- `DELETE /api/v1/courses/:id` - Deletes a course specifying the id.
+- `DELETE /api/v1/courses/type/:id` - Deletes a type specifying the id.
+- `DELETE /api/v1/courses/univ/:id` - Deletes a university specifying the id.
+- `GET /api/v1/courses/:name/:university` - Returns a course with the course name and university params. 
+- `GET /api/v1/courses/all/course/univ/cat` - Returns courses with the courses name and universities.
+- `GET /api/v1/courses/all/course/type` - Returns courses showing the courses name and types.   
+
+
 
 ### Tests
 
@@ -46,10 +49,6 @@ In this project I created a RESTful JSON APIs using Express js, which provides a
 
 - Error messages are always returned in an array of error objects
 
-### Validation
-
-- Course: `name`, `type`, `university` are required and case insensitive
-- Universities valid are: `University of Vicenza`, `University of Verona`, `University of Brescia`, `University of Milano`, `University of Catania`, `University of Rome` and `University of Macerata` 
 
 ## Links
 Link to App:
